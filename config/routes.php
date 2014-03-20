@@ -49,7 +49,8 @@ class RouteDispatcher {
 	}
 
 	function Dispatch()	{
-		if (file_exists(CONTROLLERS.$this->command->getFunctionName().'.php')) { 
+		print_r(CONTROLLERS.$this->command->getFunctionName().'_controller.php');
+		if (file_exists(CONTROLLERS.$this->command->getFunctionName().'_controller.php')) { 
 			require(CONTROLLERS.'app_controller.php');
 		} else {
 			print_r('NO EXISTE');
