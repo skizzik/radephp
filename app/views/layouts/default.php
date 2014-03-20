@@ -27,7 +27,7 @@
 	Add Foundation Framework CSS 
 
 -->
-<!doctype html>
+<!--<!doctype html>
 	<html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -43,4 +43,5 @@
 			$(document).foundation();
 		</script>
 	</body>
-</html>
+</html>-->
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius commodi recusandae aspernatur quasi necessitatibus. Unde, modi vero minus eos deserunt dolorem ad illo recusandae porro repellendus accusamus eum sunt ipsum?

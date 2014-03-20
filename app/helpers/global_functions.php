@@ -4,4 +4,8 @@
 		print_r($code);
 		echo '</pre>';
 	}
+
+	function layout($layout){
+		$GLOBALS['layout'] = $layout;
+	}
 ?>
