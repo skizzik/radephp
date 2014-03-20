@@ -13,8 +13,8 @@
 	require(APP_CONFIG);
 	require(CONFIG_DB);
 	require(ROOT . DS . APP_DIR . DS . 'helpers/load_helper.php');
-	
-	
+	require(ROOT . DS . APP_DIR . DS . 'helpers/global_functions.php');
+
 ?>
 
 
