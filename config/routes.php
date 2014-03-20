@@ -1,12 +1,69 @@
-<?php
-#------------------------------------------------------------------------------------
-# filename: routes.php
-# En este archivo ubicaremos algunas rutas estáticas por defecto
-# por ejemplo las imágenes, js y css
-#------------------------------------------------------------------------------------
+<?php 
 
-define('_STATIC_IMG_DIRNAME_','/app/assets/img/'); 
-define('_STATIC_JS_DIRNAME_','/app/assets/js/');
-define('_STATIC_CSS_DIRNAME_','/app/assets/css/'); 
+$modules = apache_get_modules();
+if (!in_array('mod_rewrite',$modules)) {
+	die('Error: no se encuentra activado "mod_rewrite" en tus archivos de configuración de apache.');
+}
+
+class Route {
+	var $commandName = '';
+	var $parameters = array();
+
+	function Route($commandName,$parameters) {
+		$this->commandName = $commandName;
+		$this->parameters = $parameters;
+	}
+	function getFunctionName()	{
+		return $this->commandName;
+	}
+	function getParameters() {
+		return $this->parameters;
+	}
+}
+
+class RouteUrlInterpreter {
+	var $command;
+	function RouteUrlInterpreter()	{
+		$requestURI = explode('/', $_SERVER['REQUEST_URI']);
+		$scriptName = explode('/',$_SERVER['SCRIPT_NAME']);
+		for($i= 0;$i < sizeof($scriptName);$i++) {
+			if ($requestURI[$i]	== $scriptName[$i]) {
+				unset($requestURI[$i]);
+			}
+		}
+		$commandArray = array_values($requestURI);
+		$commandName = $commandArray[0];
+		$parameters = array_slice($commandArray,1);
+		$this->command = new Route($commandArray[0],$parameters);
+	}
+
+	function getCommand() {
+		return $this->command;
+	}
+}
+
+class RouteDispatcher {
+	var $command;
+	function RouteDispatcher($command)	{
+		$this->command = $command;
+	}
+
+	function Dispatch()	{
+		if (file_exists(CONTROLLERS.$this->command->getFunctionName().'.php')) { 
+			require(CONTROLLERS.'app_controller.php');
+		} else {
+			print_r('NO EXISTE');
+		}
+		#print_r($this->command->getFunctionName());
+		#print_r('<br>');
+		#print_r($this->command->getParameters());
+	}
+}
+
+$urlInterpreter = new RouteUrlInterpreter();
+$command = $urlInterpreter->getCommand();
+$routeDispatcher = new RouteDispatcher($command);
+global $commandResult;
+$routeDispatcher->Dispatch();
 
 ?>
