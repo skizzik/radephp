@@ -1,4 +1,6 @@
-<?php
-	print_r('Hola soy app_controller :D!');
-	
+<?php 
+
+	Class Controller {
+		
+	}
 ?>
