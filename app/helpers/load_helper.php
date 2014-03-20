@@ -40,4 +40,6 @@ class LoadHtml {
 
 	
 }
+
+$html = new LoadHtml();
 ?>

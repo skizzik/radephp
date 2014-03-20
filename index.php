@@ -13,11 +13,8 @@
 	require(APP_CONFIG);
 	require(CONFIG_DB);
 	require(ROOT . DS . APP_DIR . DS . 'helpers/load_helper.php');
-	$html = new LoadHtml();
-	$html->css('foundation');
-	$html->javascript('vendor/jquery');
-	$html->javascript('foundation/foundation');
-	$html->image('logo-salfa.png',array('width' => 100));
+	
+	
 ?>
 
 
