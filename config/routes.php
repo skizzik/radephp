@@ -1,5 +1,4 @@
 <?php 
-
 $modules = apache_get_modules();
 if (!in_array('mod_rewrite',$modules)) {
 	die('Error: no se encuentra activado "mod_rewrite" en tus archivos de configuración de apache.');
@@ -49,16 +48,22 @@ class RouteDispatcher {
 	}
 
 	function Dispatch()	{
-		if (file_exists(CONTROLLERS.$this->command->getFunctionName().'.php')) { 
-			require(CONTROLLERS.'app_controller.php');
+		if (file_exists(CONTROLLERS.$this->command->getFunctionName().'_controller.php')) { 
+			require(LIBS.'controller.php');
+			$params = $this->command->getParameters();
+			debug();
+			print_r($controller_root->render($this->command->getFunctionName(),$params[0],$params[1]));
 		} else {
-			print_r('NO EXISTE');
+			print_r(' NO EXISTE');
 		}
 		#print_r($this->command->getFunctionName());
 		#print_r('<br>');
 		#print_r($this->command->getParameters());
 	}
+
 }
+
+
 
 $urlInterpreter = new RouteUrlInterpreter();
 $command = $urlInterpreter->getCommand();

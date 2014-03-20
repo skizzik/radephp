@@ -1,6 +1,5 @@
 <?php 
-
-	Class Controller {
+	Class AppController {
 		
 	}
 ?>
