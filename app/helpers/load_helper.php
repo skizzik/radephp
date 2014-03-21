@@ -3,7 +3,9 @@
 # filename: load_helper.php
 # Helper para crear código HTML estandarizado
 #------------------------------------------------------------------------------------
+
 class LoadHtml {
+
 
 	function css($url) {
 		if (isset($url)) { 
@@ -12,12 +14,7 @@ class LoadHtml {
 		}
 	}
 
-	/*
-		example: $this->Html->javascript('js/jquery.js');
-		return: <script src="js/jquery.js"></script>
-
-		$url = dirección de la librería		
-	*/
+	
 	function javascript($url) {
 		if (isset($url)) { 
 			$link = '<script type="text/javascript" src="'._JS_.$url.'.js"></script>';
@@ -34,8 +31,6 @@ class LoadHtml {
 			$image = '<img src="'._IMAGES_.$url.'" '.$attributes.'>';
 			echo $image;
 		}
-		
-
 	}	
 
 	

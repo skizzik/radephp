@@ -5,13 +5,10 @@
 			$classController = ucwords($controller).'Controller';
 			$controlador = new $classController();
 			$example = $controlador->{$view}();
-
 			if(empty($GLOBALS['layout'])){
 				$GLOBALS['layout'] = 'default';
 			}
-			include(ROOT . DS . 'app/views/layouts/' . $GLOBALS['layout'] . '.php');
-			
-			
+			require(ROOT . DS . 'app/views/layouts/' . $GLOBALS['layout'] . '.php');
 		}
 	}
 

@@ -1,7 +1,7 @@
 <?php 
 	require("database.php");
 
-	$app = new AppInfo();
+	$app = new AppInfo();	
 
 	$enviroment = $app->enviroment;
 
