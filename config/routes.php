@@ -51,9 +51,15 @@ class RouteDispatcher {
 		if (file_exists(CONTROLLERS.$this->command->getFunctionName().'_controller.php')) { 
 			require(LIBS.'controller.php');
 			$params = $this->command->getParameters();
-			$controller_root->render($this->command->getFunctionName(),$params[0],$params[1]);
+			if (empty($params[0])) { 
+				$view = 'index';
+			} else {
+				$view = $params[0];
+			}
+			unset($params[0]);
+			$controller_root->render($this->command->getFunctionName(),$view,$params);
 		} else {
-			print_r(' NO EXISTE');
+			print_r('ERROR: CONTROLADOR NO EXISTE');
 		}
 		#print_r($this->command->getFunctionName());
 		#print_r('<br>');

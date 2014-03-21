@@ -2,13 +2,20 @@
 	require("app_controller.php");
 	class UsersController extends AppController{
 
-		function views(){
+		function view($id){
 			layout('default'); //DECLARAR COMO $LAYOUT
-			 
 		}
 
 		function home(){
-			return 'SOY LA FUNCION HOME';
+		
+		}
+
+		function index(){
+			
+		}
+
+		function login(){
+			
 		}
 	}
 	
