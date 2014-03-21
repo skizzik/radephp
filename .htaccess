@@ -4,10 +4,18 @@ IndexIgnore */*
 # Turn on the RewriteEngine
 RewriteEngine On
 
-#
-#  Rules
-#
 
+#----------------------------------------------------------------------
+# Route para los assets
+#----------------------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond app/assets/$0 -f
+#RewriteRule ^.+\.(jpg|gif|png|ico|css|js)$ /public/$0 [L]
+RewriteRule . /app/assets/$0 [L]
+
+#----------------------------------------------------------------------
+# Route para el resto del mundo 
+#----------------------------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteRule . index.php
