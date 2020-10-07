@@ -6,7 +6,7 @@
 			'host' => '192.168.1.100',
 			'login' => 'jcarlos',
 			'password' => 'prueba',
-			'database' => 'SALFASUR',
+			'database' => 'db_develop',
 			'port' => '1521',
 			'encoding' => 'AL32UTF8',
 		);
@@ -15,7 +15,7 @@
 			'host' => '192.168.1.100',
 			'login' => 'jcarlos',
 			'password' => 'prueba2',
-			'database' => 'SALFASUR',
+			'database' => 'db_production',
 			'port' => '1521',
 			'encoding' => 'AL32UTF8',
 		);
