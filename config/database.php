@@ -3,20 +3,20 @@
 	class DatabaseConfig {
 
 		private $development = array(
-			'host' => '192.168.1.100',
-			'login' => 'jcarlos',
-			'password' => 'prueba',
-			'database' => 'db_develop',
-			'port' => '1521',
+			'host' => '<IP>',
+			'login' => '<USERNAME>',
+			'password' => '<PASSWORD>',
+			'database' => '<DATABASE>',
+			'port' => '<PORT>',
 			'encoding' => 'AL32UTF8',
 		);
 
 		private $production = array(
-			'host' => '192.168.1.100',
-			'login' => 'jcarlos',
-			'password' => 'prueba2',
-			'database' => 'db_production',
-			'port' => '1521',
+			'host' => '<IP>',
+			'login' => '<USERNAME>',
+			'password' => '<PASSWORD>',
+			'database' => '<DATABASE>',
+			'port' => '<PORT>',
 			'encoding' => 'AL32UTF8',
 		);
 
