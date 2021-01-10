@@ -13,7 +13,7 @@
 	class Database{
 
 		function connect(){
-			$con = oci_new_connect('jcarlos', 'prueba', '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.100)(PORT = 1521)) (CONNECT_DATA = (SID = SALFASUR)))', 'AL32UTF8');
+			$con = oci_new_connect('jcarlos', 'prueba', '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = <IP>)(PORT = <PORT>)) (CONNECT_DATA = (SID = <SID>)))', 'AL32UTF8');
 				
 		 	if (!$con){
 		         		header("Location: error-bd.php");
