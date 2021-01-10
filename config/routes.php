@@ -61,9 +61,7 @@ class RouteDispatcher {
 		} else {
 			print_r('ERROR: CONTROLADOR NO EXISTE');
 		}
-		#print_r($this->command->getFunctionName());
-		#print_r('<br>');
-		#print_r($this->command->getParameters());
+
 	}
 
 }
